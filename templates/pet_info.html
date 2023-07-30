@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>Pet Details</title>
+</head>
+
+<body>
+
+
+    {% if pet.photo_url %}
+    <img src="{{pet.photo_url}}" alt="{{pet.name}}">
+
+
+    {% else %}
+
+    <p>No image available</p>
+    {% endif %}
+
+
+    <ul>
+        <li>{{pet.name}}</li>
+        <li>{{pet.species}}</li>
+        <li>{{pet.age}}</li>
+        <li>{{pet.notes}}</li>
+        <li>available: {{pet.available}}</li>
+
+    </ul>
+    <a href="/{{pet.id}}/edit">Edit</a>
+    <a href="/{{pet.id}}/delete">Delete</a>
+    <a href="/">Back to All Pets</a>
+
+
+</body>
+
+</html>

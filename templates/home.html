@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav><a id="button" href="/add">Add a Pet</a></nav>
+    <h1>ADOPT A PET!</h1>
+
+    <section class="container">
+        {% for pet in pets %}
+        <img src="{{pet.photo_url}}">
+        <p class="pet_names"> <a href="/{{pet.id}}/details">{{pet.name}}</p>
+
+
+
+
+        {% endfor %}
+    </section>
+</body>
+
+</html>

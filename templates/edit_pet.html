@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>Edit Pet</title>
+</head>
+
+<body>
+    <h3>Edit {{pet.name}}</h3>
+    <form action="/{{pet.id}}/edit/handle" method="post">
+        {{form.hidden_tag()}}
+
+        {%for field in form
+        if field.widget.input_type != 'hidden' %}
+        <p> {{field.label}}
+            {{field}}
+        </p>
+
+        {% endfor%}
+
+        <button class="submit">submit</button>
+
+    </form>
+    <a href="/">Cancel</a>
+</body>
+
+</html>

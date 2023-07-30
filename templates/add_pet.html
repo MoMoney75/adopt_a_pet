@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>Add a Pet</title>
+</head>
+
+<body>
+    <form action="/add" method="post">
+        {{form.hidden_tag()}}
+
+        {%for field in form
+        if field.widget.input_type != 'hidden' %}
+        <p>
+
+            {{field.label}}
+            {{field}}
+
+            {% for error in field.errors %}
+            {{error}}
+            {% endfor %}
+        </p>
+
+
+        {% endfor%}
+
+        <button class="submit"">submit</button>
+        </form>
+    <a href=" /">Cancel</a>
+
+</body>
+
+</html>
